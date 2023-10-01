@@ -35,3 +35,8 @@ This Python API extracts the Billboard chart tracks from any date and automatica
 
 **Note:** Some useful playlist information from Spotify is stored as Pandas DataFrames, which can be found in the `/data` directory. These DataFrames can be used for further analysis if necessary.
 
+### Todo:
+1. Write custom exceptions
+2. Unify Billboard and BillboardWorld
+3. Maybe build a companion mobile/desktop application
+
