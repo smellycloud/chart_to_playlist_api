@@ -3,8 +3,6 @@ from pandas import DataFrame
 import os
 
 
-# print(page_urls.keys())
-
 class BillboardWorld:
     def __init__(self, date, chart, page_urls, country, genre=None):
         self.date = date
@@ -21,10 +19,10 @@ class BillboardWorld:
                     'a-truncate-ellipsis-2line u-max-width-330 u-max-width-230@tablet-only')
 
     def get_tracks_dataframe(self):
-        # print(self.page_urls[self.chart]['mexico_songs'])
         # no idea why self.country resolves to a tuple fml. sus workaround works.
         dataframe_path = os.path.join(os.path.dirname(__file__), '..', 'data',
-                                      self.page_urls[self.chart][str(self.country[0])]['name'] + ' ' + self.date + '.csv')
+                                      self.page_urls[self.chart][str(self.country[0])][
+                                          'name'] + ' ' + self.date + '.csv')
         if os.path.isfile(dataframe_path):
             print('BillboardWorld::get_tracks_dataframe: .csv file exists')
             return self.page_urls[self.chart][str(self.country[0])]['name'] + ' ' + self.date
@@ -32,7 +30,8 @@ class BillboardWorld:
         track_titles = list()
         track_artists = list()
 
-        billboard_html = scraper.utilities.Soup(self.page_urls[self.chart][str(self.country[0])]['url'] + self.date).get_soup()
+        billboard_html = scraper.utilities.Soup(
+            self.page_urls[self.chart][str(self.country[0])]['url'] + self.date).get_soup()
 
         first_title = billboard_html.find_all(attrs={
             'class': 'c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 u-font-size-23@tablet '
@@ -64,7 +63,6 @@ class BillboardWorld:
         track_titles = [item for sublist in track_titles for item in sublist]
         track_artists = [item for sublist in track_artists for item in sublist]
 
-        # print(track_titles, '\n', track_artists)
         track_df = DataFrame({
             'track': track_titles,
             'artist': track_artists
@@ -72,6 +70,3 @@ class BillboardWorld:
 
         track_df.to_csv(os.path.abspath(dataframe_path))
         return self.page_urls[self.chart][str(self.country[0])]['name'] + ' ' + self.date
-
-# df = Billboard(date='1998-05-21').get_tracks_dataframe()
-# print(df)

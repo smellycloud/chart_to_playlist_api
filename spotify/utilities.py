@@ -92,7 +92,6 @@ class Playlist:
                 for i, row in dataframe.iterrows():
                     track = Search(user=self.user, track_name=row['track'], artist=row['artist'])
                     track_id = track.get_track_id()
-                    # print(row['track'], row['artist'], track_id)
                     if track_id is not np.nan or len(str(track_id)) > 0:
                         track_ids.append(track_id)
                         track_popularity.append(track.get_track_popularity())
@@ -124,10 +123,8 @@ class Playlist:
     def create_spotify_playlist(self):
         if self.dataframe_name is None or self.dataframe_name == '':
             return False
-        # print(pd.read_csv(os.path.abspath(self.dataframe_path)))
         track_ids = self.append_track_info_to_df()
         track_ids = [track for track in track_ids if str(track) != str(np.nan)]
-        # print(track_ids)
         try:
             playlist = self.user.user_playlist_create(user=self.user.me()['id'],
                                                       name=self.dataframe_name,
@@ -143,7 +140,6 @@ class Playlist:
                     self.user.playlist_add_items(playlist_id=playlist['id'], items=track_ids)
                     break
                 self.user.playlist_add_items(playlist_id=playlist['id'], items=batch)
-            # self.user.playlist_add_items(playlist_id=playlist['id'], items=track_ids)
             print('(spotify) utilities::create_spotify_playlist: success')
             return True
         except:

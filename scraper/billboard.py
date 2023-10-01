@@ -3,15 +3,11 @@ from pandas import DataFrame
 import os
 
 
-# print(page_urls.keys())
-
 class Billboard:
     def __init__(self, date, chart, page_urls):
         self.date = date
         self.chart = chart
         self.page_urls = page_urls
-        # self.country = country,
-        # self.genre = genre
 
     title_class = ('c-title a-no-trucate a-font-primary-bold-s u-letter-spacing-0021 lrv-u-font-size-18@tablet '
                    'lrv-u-font-size-16 u-line-height-125 u-line-height-normal@mobile-max a-truncate-ellipsis '
@@ -62,7 +58,6 @@ class Billboard:
         track_titles = [item for sublist in track_titles for item in sublist]
         track_artists = [item for sublist in track_artists for item in sublist]
 
-        # print(track_titles, '\n', track_artists)
         track_df = DataFrame({
             'track': track_titles,
             'artist': track_artists
@@ -70,6 +65,3 @@ class Billboard:
 
         track_df.to_csv(os.path.abspath(dataframe_path))
         return self.page_urls[self.chart]['name'] + ' ' + self.date
-
-# df = Billboard(date='1998-05-21').get_tracks_dataframe()
-# print(df)
