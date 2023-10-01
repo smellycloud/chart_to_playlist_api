@@ -1,8 +1,4 @@
-# chart_to_playlist_api
-
 ![mockup_ln6slhru](https://github.com/smellycloud/chart_to_playlist_api/assets/52908667/49424162-fcfc-4e38-85f2-341defe9c92a)
-
-
 **Disclaimer:** Please ensure compliance with Spotify's terms of service and API usage policies when using this tool.
 
 # Guide
