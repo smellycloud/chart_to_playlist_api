@@ -32,7 +32,7 @@
 
 7. **Profit**
 
-**Note:** Some useful playlist information from Spotify is stored as Pandas DataFrames, which can be found in the `/data` directory. These DataFrames can be used for further analysis if necessary.
+**Note:** Some useful playlist information from Spotify is stored in .csv files, which can be found in the `/data` directory. These can be used for further analysis if necessary.
 <img width="1833" alt="SCR-20231001-djax" src="https://github.com/smellycloud/chart_to_playlist_api/assets/52908667/d95fd2fe-d95a-4ae2-85f7-2bcd8a08d94e">
 
 ### Todo:
