@@ -1,5 +1,4 @@
 # chart_to_playlist_api
-This Python API extracts the Billboard chart tracks from any date and automatically generates playlists in your Spotify profile.
 
 ![mockup_ln6slhru](https://github.com/smellycloud/chart_to_playlist_api/assets/52908667/49424162-fcfc-4e38-85f2-341defe9c92a)
 
