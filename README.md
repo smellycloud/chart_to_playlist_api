@@ -21,7 +21,7 @@ This Python API extracts the Billboard chart tracks from any date and automatica
    * In the User Management section, add your name and the email of your Spotify account.
 4. **Environment Variables**
    Create a `.env` file in the project directory and enter your Spotify Developer App credentials:
-   `CLIENT_ID=your_client_id_here`
+   `CLIENT_ID=your_client_id_here`,
    `CLIENT_SECRET=your_client_secret_here`
 5. **Run the Server**
    Start the server using uvicorn. Run the following command from the project directory:
@@ -34,9 +34,12 @@ This Python API extracts the Billboard chart tracks from any date and automatica
 7. **Profit**
 
 **Note:** Some useful playlist information from Spotify is stored as Pandas DataFrames, which can be found in the `/data` directory. These DataFrames can be used for further analysis if necessary.
+<img width="1833" alt="SCR-20231001-djax" src="https://github.com/smellycloud/chart_to_playlist_api/assets/52908667/d95fd2fe-d95a-4ae2-85f7-2bcd8a08d94e">
 
 ### Todo:
 1. Write custom exceptions
 2. Unify Billboard and BillboardWorld
 3. Maybe build a companion mobile/desktop application
+4. Integrate genre charts
+5. Build a recommender system? Hmm.
 
