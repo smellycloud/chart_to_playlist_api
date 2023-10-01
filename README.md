@@ -4,6 +4,7 @@
 # Guide
 
 ### Follow these steps to set up and run the project on your local machine:
+(I'm too cheap to deploy and host :3)
 
 1. **Clone the Repository**
 2. **Install Requirements**
