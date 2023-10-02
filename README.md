@@ -39,6 +39,6 @@
 1. Write custom exceptions
 2. Unify Billboard and BillboardWorld
 3. Maybe build a companion mobile/desktop application
-4. Integrate genre charts
-5. Build a recommender system? Hmm.
+4. Integrate charts by genre
+5. Build a recommender system? [Hmm.](https://developer.spotify.com/terms#section-iv-restrictions)
 
